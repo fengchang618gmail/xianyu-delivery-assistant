@@ -1,0 +1,30 @@
+# 依赖与构建产物
+node_modules/
+dist/
+tsconfig.tsbuildinfo
+
+# Tauri / Rust
+src-tauri/target/
+src-tauri/gen/
+
+# 外部二进制占位（打包脚本生成）
+src-tauri/binaries/
+
+# 本机运行状态（永不提交）
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+nm_token*
+
+# 日志与临时文件
+*.log
+tmp/
+.DS_Store
+Thumbs.db
+
+# 发布暂存区：本机打包用（网盘上传包、校验和等），不进入仓库
+_release-staging/
+
+# 图标源文件保留，生成物由 tauri icon 重建
+# app-icon.png

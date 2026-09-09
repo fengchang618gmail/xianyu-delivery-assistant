@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "闲鱼发货助手连接组件",
+  "version": "0.2.0",
+  "description": "仅在闲鱼卖家聊天页识别待发货订单，并在桌面端确认后协助填入与发送。不读取其他网站。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqc+tQkxgY4fTq73p7r6HV2K/qmOX0kzU18Zzbi5ML4xc0y5bXOIsAUFhk4cSfXmuQ+UV/Pa4F2LFNSPmtDKpz71smGMwdv4IjUxiP7xTnAKJ8r8IXZPZEfC62wukmyp3FPpOKzeSzU2/HNfSvoc6DR4ccVeOMrwViID/OZMgQ5zrt4CidK/ZCprpshvMv9RbN0g9XTB1NwtcSbVF+ZcmZKtN0JFIskmJCJiTLRnJ9Cu1Fc7FDvF+oj2ep5eBIt4fGsepqu4KlE1OIViOIkaDN/g8UGcrjm8Qo9W8AGJkQO0rbwIkwTCG1O5dW2WfQzWmaGxu3nJXGM7ywQz0LWrDcwIDAQAB",
+  "permissions": ["storage", "nativeMessaging", "alarms"],
+  "host_permissions": ["https://seller.goofish.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://seller.goofish.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

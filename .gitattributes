@@ -1,0 +1,2 @@
+# .cmd 批处理必须是 CRLF（cmd.exe 对 LF-only 文件会合并行、破坏括号块），且禁止行尾转换
+scripts/*.cmd text eol=crlf

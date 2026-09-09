@@ -1,0 +1,8 @@
+# rustc 无法通过注册表自动定位本机 MSVC，显式指定链接器。
+# 版本号变化时由 scripts/package-windows.cmd 动态覆盖，此文件作为静态兜底。
+[target.x86_64-pc-windows-msvc]
+linker = "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+
+# 8GB 内存机器：限制并行编译数，防止内存耗尽死机。
+[build]
+jobs = 4
